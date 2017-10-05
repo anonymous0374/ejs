@@ -1,0 +1,7 @@
+Getting Started
+
+1 Webpack, its purpose is to compile JavaScript modules.
+
+2 Webpack manages javascript files dependency too, by creating a dependency graph.
+
+3 
