@@ -21,6 +21,9 @@ module.exports = (env = {}) => {
         },
         module: {
             rules: [{
+                test: /\.ejs$/,
+                loader: 'ejs-compiled-loader'
+            }, {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -42,7 +45,10 @@ module.exports = (env = {}) => {
         },
         plugins: [
             new CleanWebpackPlugin(['dist']),
-            new HtmlWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                template: 'src/public/index.ejs'
+            }),
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'common' // the common bundle's name
             }),
